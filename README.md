@@ -1,11 +1,12 @@
 # ==== STUDENT HUB ====
-.This code is for an application with three menus: 
+This code is for an application with three menus: 
 * the hub ( for timetables + to-dos );
 * the timer ( with pomodoro timer );
 * the record ( for keeping record of your grades as well as simulate future averages).
-.This code will be produced in RUST;  
-.This code will first be created for terminal I/O -> then converted to a file output ( database only ) -> then converted to an UI using websockets & HTML / CSS. 
-.This page will hold info on the files of the project, as well as functions, with their expected inputs and outputs, errors and goals.
+<br>
+This code will be produced in RUST; <br>
+This code will first be created for terminal I/O -> then converted to a file output ( database only ) -> then converted to an UI using websockets & HTML / CSS. <br>
+This page will hold info on the files of the project, as well as functions, with their expected inputs and outputs, errors and goals. <br>
 
 ## Structs
     to-do list item - struct with vec of structs:to-do, title, to-do counter and dones counter;
