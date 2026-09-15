@@ -46,7 +46,7 @@ This page will hold info on the files of the project, as well as functions, with
         - Prints contents of 'list'.
 
     
-### GRADES
+### GRADES 
     create_year(name: String) -> Year ; 
         - Creates year with the name 'name', todos = [], average = 0.00.
 
@@ -69,10 +69,11 @@ This page will hold info on the files of the project, as well as functions, with
         - Calculates yearly average from 'year'. 
 
     total_average(years: &[Year]) -> f32 ;
-        - Calculates total average of 'years'. 
+        - Calculates total average of 'years'.
 
     print_year(year: Year) -> () ; 
         - Prints contents of 'year'.
+
 ### PROGRAM
     choose_menu(program: &mut Program, menu: String) -> () ;
         - Chooses what menu it is in ( To-do, Grades ); 
@@ -80,5 +81,5 @@ This page will hold info on the files of the project, as well as functions, with
     show_menu(program: Program) -> () ; 
         - Displays the name of the menu it is currently in; 
 
-    end() -> () ;
+    end(program) -> () ;
         - Terminates Program 

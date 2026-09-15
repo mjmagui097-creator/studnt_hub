@@ -60,7 +60,7 @@ impl ToDoList {
         for item in self.todos {
             println!("{} : {}", item.title, if item.done == true {"v"} else {"x"});
         }
-        println!("===================")
+        println!("==================="); 
     }
 
 }
