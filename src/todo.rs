@@ -57,9 +57,10 @@ impl ToDoList {
 
     pub fn print_todo_list(self) -> () {
         println!("=== {} ===", self.title); 
-        for item in self.todos {
+        for item in &self.todos {
             println!("{} : {}", item.title, if item.done == true {"v"} else {"x"});
         }
+        println!("{}", self.get_progress_list());
         println!("==================="); 
     }
 
