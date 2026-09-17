@@ -1,3 +1,6 @@
+use crate::command::*; 
+
+
 pub fn man() -> () {
     println!(" ");
     println!("This is the manual. Here are described all commands accepted by this program. <> are the parameters you should add to the command mandatorily.");
@@ -46,4 +49,50 @@ pub fn man() -> () {
     println!(" ");
     println!("  -> When creating a To-Do List or a Year, they are empty by default."); 
     println!(" ");
+    println!("  -> All specifics from commands inside <> MUST be between quote marks."); 
+    println!(" ");
+}
+
+pub fn select(input: String) -> () {
+    let cmd: String = select_first(&input); 
+    let specifics: Vec<&str> = parse(&input); 
+
+    let command = cmd.trim(); 
+    match command {
+        "man" => man(), 
+        "s" => launch(specifics), 
+        "q" => quit(), 
+        "c" => create_father(specifics), 
+        "cs" => create_son(specifics), 
+        "del" => delete_father(specifics), 
+        "rm" => delet_son(specifics), 
+        "display" => display(specifics), 
+        "click" => click(specifics), 
+        "g" => grade(specifics), 
+        "e" => ects(specifics), 
+        _ => error(),
+    }
+}
+
+pub fn select_first(input: &str) -> String {
+    let mut first: String = String::new(); 
+    for i in input.chars() {
+        if i == ' ' {
+            if !first.is_empty() {
+                break;
+            }
+        } else {
+            first.push(i);
+        }
+    }
+    first
+} 
+
+pub fn parse(input: &str) -> Vec<&str> {
+    input
+        .split('"')
+        .enumerate()
+        .filter(|(index, _)| index % 2 == 1)
+        .map(|(_, text)| text)
+        .collect()
 }
